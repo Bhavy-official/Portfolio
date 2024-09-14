@@ -1,0 +1,241 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'home.css'%}">
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico'%}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3sTChY69Tzvln7qpkPl4Ovv47Q4UOocjfG3v9yw6ocJrQhm8FivFzzRIeYd1UHRn0S57yO5MVS0D1ROArTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/f7f5f0d357.js" crossorigin="anonymous"></script>
+
+
+    <base href="/">
+    <title>Home</title>
+</head>
+
+<body>
+    <header class="headtxt">
+        <nav class="nav">
+            <ul>
+                <li> 
+                    <a href="admin">Admin</a>
+                </li>
+                <li> 
+                    <a href="accounts/login">Login</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+                <li>
+                    <a href="#Contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="text1">
+            <h1 class="animated-heading">
+                <span class="word word2">B</span>
+                <span class="word word2">H</span>
+                <span class="word word2">A</span>
+                <span class="word word2">V</span>
+                <span class="word word2">Y</span>
+            </h1>
+            <h3 class="text2">DEVELOPER</h3>
+            <div class="button-container">
+                <a href="https://www.instagram.com/bhavy.ig" target="_blank" class="icon-button" title="bhavy_ig"
+                    style="text-decoration: none;">
+                    <i class="fa-brands fa-instagram" style="color: #ff006f;"></i>
+                </a>
+</head>
+<body>
+    <audio id="my_audio" src="{% static 'rr.mp3' %}" loop="loop"></audio>
+    
+    <a href="#" onclick="handleClick(event)" class="icon-button" title="Bhavy_Discord" style="text-decoration: none;">
+        <i class="fa-brands fa-discord" style="color: #9d6dff;"></i>
+    </a>
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="closedb" onclick="closeModal()">&times;</span>
+            <p>You don't have access to my profile.</p>
+        </div>
+    </div>
+
+                <!-- Third Button linking to Instagram -->
+                <a href="https://www.linkedin.com/in/bhavy-manchanda-3ba9a6323" target="_blank" class="icon-button"
+                    title="bhavy_Linkedin" style="text-decoration: none;">
+                    <i class="fa-brands fa-linkedin" style="color:#0393e0;"></i>
+                </a>
+            </div>
+
+    </header>
+    <section id="about">
+        <div class="heading">
+            <h2 class="section-headings">About Me</h2>
+        </div>
+        <div class="about-content">
+            <div class="text-content">
+                <div class="about-container1">
+                    <p class="about-para">
+                        I’m a first-year B.Tech student in Computer Science Engineering with a deep-rooted passion for
+                        technology and programming. My journey began when I first encountered a random piece of code, my
+                        curiosity sparked and I embarked on a self-taught adventure into coding. This initial
+                        fascination grew into a commitment to developing skills in web development.
+                    </p>
+                </div>
+                <div class="about-container2">
+                    <p class="about-para">
+                        I’m eager to explore other domains like app development and AI/ML. I strive to balance my
+                        solitary personal projects with collaborative group efforts, valuing both independent innovation
+                        and teamwork. I am driven by the challenge of finding creative solutions and viewing problems
+                        from unique perspectives, qualities that I believe set me apart.
+                    </p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="{% static 'aavtar test 3.png' %}" alt="BHAVY" class="aavtar">
+                <img src="{% static 'paper-pin pinned.png' %}" alt="Cool" class="paper-pin">
+            </div>
+        </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="skills">
+        <div>
+            <h1 class="section-headings">Skills</h1>
+        </div>
+        <div class="skill-container">
+            <div class="skill-text">
+                <h2>Current Skills</h2>
+            </div>
+            <div class="journey container">
+                <img src="{% static 'journey24.png' %}"
+                    alt="My journey started with html then I learnt CSS , A bit of JS and then python and at present I am learning Django"
+                    class="journey-img">
+            </div>
+        </div>
+        <div class="future-goals-container">
+            <div class="future-goals-heading">
+                <h2 class="future-heading">Future <br> Goals</h2>
+            </div>
+            <div class="future-goals-content">
+                <h4 class="quote">"Pursue your passions with curiosity and enthusiasm; it's the journey of exploration
+                    that leads to true discovery and fulfillment."</h4>
+                <ul>
+                    <li>Artificial Intelligence and Machine Learning</li>
+                    <li>Game Development</li>
+                    <li>Cyber Security</li>
+                </ul>
+                <h4 class="conclusion">While it may be unrealistic to master every skill, I am determined to explore and
+                    engage with each of them to the best of my ability.</h4>
+            </div>
+        </div>
+    </section>
+    
+    <section id="Contact">
+        <div class="contact-wrapper">
+            <div class="contact-container">
+                <h1 class="section-headings">Contact Us</h1>
+                <form action="." method="post">
+                    <!-- {% csrf_token %} -->
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        {{ form.name }}
+                        {% if form.name.errors %}
+                            <div class="error">{{ form.name.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                            <div class="error">{{ form.email.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        {{ form.subject }}
+                        {% if form.subject.errors %}
+                            <div class="error">{{ form.subject.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        {{ form.message }}
+                        {% if form.message.errors %}
+                            <div class="error">{{ form.message.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="animation">
+                <div class="planet-container">
+                    <img src="{% static 'planet-vector2.png' %}" alt="Planet" class="planet">
+                </div>
+                <img src="{% static 'rocket-vector-bg.png' %}" alt="Rocket" class="rocket">
+        </div>
+        </div>
+    </section>
+    
+    
+    <div id="formDisabledDialog" class="dialog" style="display: none;">
+        <div class="dialog-content">
+            <span class="close">&times;</span>
+            <h2>Form Submissions Disabled</h2>
+            <p>Form submissions have been disabled by the author due to security reasons. This is just a demo site for club recruitment, and The feature will be reviewed for potential re-evaluation in the future.</p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const formDisabled = '{{ form_disabled|yesno:"true,false"|safe }}';
+            
+            if (formDisabled === 'true') {
+                const dialog = document.getElementById('formDisabledDialog');
+                const closeBtn = dialog.querySelector('.close');
+                
+                dialog.style.display = 'block';
+                closeBtn.onclick = function() {
+                    dialog.style.display = 'none';
+                }
+                window.onclick = function(event) {
+                    if (event.target === dialog) {
+                        dialog.style.display = 'none';
+                    }
+                }
+            }
+        });
+    </script>
+    
+    <footer>
+        <section id="copyright">
+            <p>&copy; 2024 Bhavy All rights reserved.</p>
+            <p>Unauthorized use and/or duplication of this material without express and written permission from this site's author and/or owner is strictly prohibited. Excerpts and links may be used, provided that full and clear credits are given to Bhavy Manchanda.</p>
+            
+        </section>
+    </footer>
+    
+    
+    
+    <script src="{% static 'script.js'%}"></script>
+</body>
+
+</html>
